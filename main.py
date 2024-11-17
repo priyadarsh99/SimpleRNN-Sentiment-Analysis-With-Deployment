@@ -84,11 +84,10 @@ if st.button('Classify', key='classify_button', help="Click to analyze sentiment
         preprocessed_input = preprocess_text(user_input)
         prediction = model.predict(preprocessed_input)
         sentiment = 'Positive' if prediction[0][0] >= 0.5 else 'Negative'
-        probability = prediction[0][0] if sentiment == 'Positive' else 1 - prediction[0][0]
 
         # Display the sentiment result with enhanced UI
         st.markdown(f'<div class="result">Sentiment: {sentiment}</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="result">Probability: {probability}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="result">Probability: {prediction[0][0]}</div>', unsafe_allow_html=True)
 
 else:
     st.markdown('<div class="loading">Please enter some text and click the "Classify" button to analyze sentiment.</div>', unsafe_allow_html=True)
