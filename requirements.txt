@@ -1,0 +1,11 @@
+tensorflow
+pandas
+numpy
+scikit-learn
+tensorboard
+matplotlib
+streamlit
+ipykernel
+
+#conda create -p python venv
+#conda activate venv/
